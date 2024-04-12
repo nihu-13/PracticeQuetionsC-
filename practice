@@ -1,0 +1,390 @@
+1. Write a C++ Program to Check Whether a Number is a Positive or Negative Number.
+#include <bits/stdc++.h>
+using namespace std;
+bool check(int n){
+  if(n>=0){
+    return true;
+  }else{
+    return false;
+  }
+}
+int main() {
+if(check(-5)){
+  cout<<"Number is positive ";
+}
+  else{
+    cout<<"Number is Negative ";
+  }
+}
+
+2. Write a Program to Find the Greatest of the Three Numbers.
+#include <bits/stdc++.h>
+using namespace std;
+void greatest(int num1,int num2,int num3){
+ if(num1>num2 && num1>num3){
+   cout<<num1<<" is greatest ";
+ }else if(num3>num2 && num1<num3){
+      cout<<num3<<" is greatest ";
+    }
+  else{
+    cout<<num2<<" is greatest ";
+  }
+}
+int main() {
+int num1=2,num2=334,num3=45;
+greatest(num1,num2,num3);
+ return 0;
+}
+
+3. C++ Program To Check Whether Number is Even Or Odd
+
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+bool isEven(int n) {
+    return (n & 1) == 0;
+}
+int main() {
+    if(isEven(6)){
+        cout<<"NUmber is Even ";
+    }
+    else{
+        cout<<"Number is Odd ";
+    }
+    return 0;
+}
+or
+bool isEven(int n) {
+    return n%2 == 0;
+}
+
+4. Write a Program to Find the ASCII Value of a Character
+#include <iostream> 
+using namespace std; 
+  
+int main() 
+{ 
+    char ch; 
+  
+    ch = 'A'; 
+  
+    cout << "The ASCII value of " << ch << " is " << int(ch) 
+         << endl; 
+  
+    return 0; 
+}
+
+5. Write a Program to Check Whether a Character is a Vowel or Consonant
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+void findvowel(char n){
+    if((n>='a'&& n<='z') || (n>='A' && n<='Z')){ //you can use isalpha(n)
+     if(n=='a'||n=='i'||n=='e'||n=='o'||n=='u'||n=='A'||n=='E'||n=='I'||n=='O'||n=='U'){
+         cout<<"Character is Vowel";
+     }else{
+        cout<<"Character is Consonant";
+    }
+    }else{
+        cout<<"Please Enter Valid Character ";
+    }
+}
+int main() {
+    char ch='1';
+   findvowel(ch);
+    return 0;
+}
+or
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+void findvowel(char n){
+    if(isalpha(n)){
+     if(n=='a'||n=='i'||n=='e'||n=='o'||n=='u'||n=='A'||n=='E'||n=='I'||n=='O'||n=='U'){
+         cout<<"Character is Vowel";
+     }else{
+        cout<<"Character is Consonant";
+    }
+    }else{
+        cout<<"Please Enter Valid Character ";
+    }
+}
+
+6. Write a Program to Print Check Whether a Character is an Alphabet or Not
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+void isAlpha(char n){
+    if((n>='a'&& n<='z') || (n>='A' && n<='Z')){ // or you can use isalpha() also
+         cout << n << " is an alphabet." << endl; 
+     }else{
+        cout << n << " is not an alphabet." << endl; 
+    }
+}
+int main() {
+    char ch='a';
+   isAlpha(ch);
+    return 0;
+}
+
+7. Write a Program to Find the Length of the String Without using strlen() Function 
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+void findLength(string n){
+    int cnt=0;
+    for(auto i:n){
+        cnt++;
+    }
+    cout<<"Length of "<<n<<" is : "<<cnt;
+}
+int main() {
+    string ch="nihusahu";
+   findLength(ch);
+    return 0;
+}
+or
+int main() 
+{ 
+    string str = "GeeksforGeeks"; 
+    int length = 0; 
+  
+    for (int i = 0; str[i] != '\0'; i++) { 
+        length++; 
+    } 
+  
+    cout << "The length of the string is: " << length 
+         << endl; 
+  
+    return 0; 
+}
+
+8. Write a Program to Toggle Each Character in a String 
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+void toggel(string n){
+    for(int i=0;n[i]!='\0';i++){
+        if(n[i]>='a' && n[i]<='z'){
+            n[i]=n[i]+'A'-'a';
+        }else if(n[i]>='A' && n[i]<='Z'){
+            n[i]=n[i]+'a'-'A';
+        }
+    }
+    cout<<"Toggel String "<<n<<endl;
+}
+int main() {
+    string ch="niHu";
+  toggel(ch);
+    return 0;
+}
+or
+int main() 
+{ 
+    string str = "heLLo"; 
+  
+    for (int i = 0; str[i] != '\0'; i++) { 
+        if (islower(str[i])) { 
+            str[i] = toupper(str[i]); 
+        } 
+        else if (isupper(str[i])) { 
+            str[i] = tolower(str[i]); 
+        } 
+    } 
+  
+    cout << "Toggled string: " << str << endl; 
+  
+    return 0; 
+}
+
+9. Write a Program to Count the Number of Vowels 
+#include <cstring> 
+#include <iostream> 
+using namespace std; 
+  
+int main() 
+{ 
+    string str = "GeeksforGeeks to the moon"; 
+    int vowels = 0; 
+  
+    for (int i = 0; str[i] != '\0'; i++) { 
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i'
+            || str[i] == 'o' || str[i] == 'u'
+            || str[i] == 'A' || str[i] == 'E'
+            || str[i] == 'I' || str[i] == 'O'
+            || str[i] == 'U') { 
+            vowels++; 
+        } 
+    } 
+  
+    cout << "Number of vowels in the string: " << vowels 
+         << endl; 
+  
+    return 0; 
+}
+
+10. Write a Program to Remove the Vowels from a String
+int main() 
+{ 
+    int j = 0; 
+  
+    string str = "GeeksforGeeks"; 
+  
+    for (int i = 0; str[i] != '\0'; i++) { 
+        if (str[i] != 'a' && str[i] != 'e' && str[i] != 'i'
+            && str[i] != 'o' && str[i] != 'u'
+            && str[i] != 'A' && str[i] != 'E'
+            && str[i] != 'I' && str[i] != 'O'
+            && str[i] != 'U') { 
+            str[j++] = str[i]; 
+        } 
+    } 
+    while (j < str.size()) { 
+  
+        str[j] = '\0'; 
+  
+        j++; 
+    } 
+    cout << "String without vowels: " << str << endl; 
+  
+    return 0; 
+}
+
+11. Write a Program to Remove All Characters From a String Except Alphabets
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+string remove_non_alphabets(string str) 
+{ 
+    string result = ""; 
+    for (char c : str) { 
+        if (isalpha(c)) { 
+            result += c; 
+        } 
+    } 
+    return result; 
+} 
+  
+int main() 
+{ 
+    string str = "Hel0000Iam8"; 
+  
+    cout << "Alphabets only: " << remove_non_alphabets(str) 
+         << endl; 
+  
+    return 0; 
+}
+or
+  
+string remove_non_alphabets(string str) 
+{ 
+    string result = ""; 
+    for (char c : str) { 
+        if (c>='a' && c<='z'||(c>='A' && c<='Z')) { 
+            result += c; 
+        } 
+    } 
+    return result; 
+} 
+  
+int main() 
+{ 
+    string str = "hi10by"; 
+  
+    cout << "Alphabets only: " << remove_non_alphabets(str) 
+         << endl; 
+  
+    return 0; 
+}
+
+12. Write a Program to Remove Spaces From a String
+string remove_spaces(string str) 
+{ 
+    string ans = ""; 
+    for (char c : str) { 
+        if (c != ' ') { 
+            ans += c; 
+        } 
+    } 
+    return ans; 
+} 
+
+13. Write a Program to Find the Sum of the First N Natural Numbers
+#include <iostream> 
+using namespace std; 
+  
+// Function to find sum 
+int findSum(int n) 
+{ 
+    int sum = 0; 
+    for (int i = 1; i <= n; i++) 
+        sum = sum + i; // sum+=i;
+    return sum; 
+} 
+  
+int main() 
+{ 
+    int n = 7; 
+    cout << findSum(n); 
+    return 0; 
+}
+
+14. Write a Program to Find the Factorial of a Number Using Loops
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+// function to find factorial 
+int factorial(int n) 
+{ 
+    int fact = 1; 
+    while (n > 1) { 
+        fact *= n; 
+        n--; 
+    } 
+  
+    return fact; 
+} 
+or
+int factorial(int n) 
+{ 
+    
+    if(n==1||n==0)
+      return 1;
+      
+    return (n*factorial(n-1)) ; 
+} 
+  
+// driver code 
+int main() 
+{ 
+    int num = 5; 
+  
+    cout << factorial(num); 
+  
+    return 0; 
+}
+
+15. Write a Program to Find a Leap Year or Not
+#include <iostream> 
+using namespace std; 
+  
+bool checkYear(int year) 
+{ 
+    // leap year 
+    if (year % 400 == 0 || (year % 4 == 0 && year % 100 == 0)) 
+        return true; 
+  
+    // Not leap year 
+    return false; 
+} 
+  
+int main() 
+{ 
+    int year = 2000; 
+  
+    if (checkYear(year)) 
+        cout << "Leap Year"; 
+    else
+        cout << "Not a Leap Year"; 
+    return 0; 
+}
